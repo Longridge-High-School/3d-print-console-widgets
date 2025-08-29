@@ -1,4 +1,4 @@
-  GNU nano 8.4                                                                                         app.py                                                                                                    #
+#
 # Collector for 3D Print Console Performance Widget
 #
 

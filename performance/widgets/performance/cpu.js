@@ -1,6 +1,6 @@
 
-address = window.location.search;
-parameterList = new URLSearchParams (address);
+const address = window.location.search;
+const parameterList = new URLSearchParams (address);
 
 if (parameterList.has ("title"))
 {

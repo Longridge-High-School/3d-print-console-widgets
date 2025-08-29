@@ -1,6 +1,5 @@
-
-address = window.location.search;
-parameterList = new URLSearchParams (address);
+const address = window.location.search;
+const parameterList = new URLSearchParams (address);
 
 if (parameterList.has ("title"))
 {
@@ -93,7 +92,7 @@ async function GetDisk (url)
     {
         var colour = "red";
     }
-    else if (colour > 60)
+    else if (disk > 60)
     {
         var colour = "orange";
     }
