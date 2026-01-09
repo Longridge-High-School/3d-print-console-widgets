@@ -41,7 +41,8 @@ Here is what each line does:
 
 If you want more than one copy of the same widget, just create another JSON object in ```/data/widgets.json```. Remember to include commas between objects.
 
-**If your widget is not appearing after adding it to the ```/data/widgets.json``` file, try force-refreshing 3D Print Console a few times (SHIFT + F5 in Chrome and Edge)!**
+> [!TIP]
+> If your widget is not appearing after adding it to the ```/data/widgets.json``` file, try force-refreshing 3D Print Console a few times (SHIFT + F5 in Chrome and Edge / CTRL + F5 in Firefox)!
 
 > [!WARNING]
 > Some widgets may require additional setup - please see their section in the widget list for more information!
