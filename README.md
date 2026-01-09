@@ -75,3 +75,32 @@ By default, Document Viewer includes a file called ```sample.md``` for you to te
 ### Slicer
 
 [![Static Badge](https://img.shields.io/badge/Download-8A2BE2?style=plastic&logo=github&logoSize=auto&color=%23586497EE)](https://github.com/Longridge-High-School/3d-print-console-widgets/raw/refs/heads/main/_packages/slicer.zip)
+
+This widget adds a slicer to 3D Print Console, so you can prepare your models in your browser and send them directly to a printer. It is powered by [Polyslice](https://jgphilpott.github.io/polyslice/). It supports a wide range of popular 3D printers and filaments.
+
+> [!TIP]
+> To open Slicer, click the green "Slice Models" button.
+
+#### Sample Config
+
+```json
+{
+    "title": "Slicer",
+    "url": "/slicer/button.html",
+    "args": "",
+    "enabled": "true"
+}
+```
+
+**This config will not need any editing - just put it in your config file, and start slicing!**
+
+#### Limitations
+
+Slicer currently has some limitations , some of which are inherited from Polyslice, and some of which are down to being browser-based:
+
+- Layer height is always 0.2mm.
+- High-poly models will take a long time to slice. The more RAM you have, the better.
+- Models cannot be rotated or scaled once imported.
+- Only 1 model can be sliced at once.
+- It will refuse to slice some models, so don't go uninstalling your normal slicing software.
+- The preview will not render every model correctly, even though they slice fine.
