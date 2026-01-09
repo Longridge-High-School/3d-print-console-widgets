@@ -1,9 +1,27 @@
 # 3D Print Console Widgets
 
-## Installing Widgets
+Use widgets to add extra functionality to [3D Print Console](https://github.com/Longridge-High-School/3d-print-console)!
+This repository contains the following widgets:
+
+- [Performance Monitor](#performance-monitor)
+- [Document Viewer](#document-viewer)
+- [Slicer](#slicer)
+
+## How to Install Widgets
 
 TODO
 
-## List of Widgets
+## Widget List
 
-- [Performance Counter](https://github.com/Longridge-High-School/3d-print-console-widgets/blob/main/performance/performance.txt)
+### Performance Monitor
+
+[<kbd><br>**Download**<br></kbd>](https://github.com/Longridge-High-School/3d-print-console-widgets/blob/main/_packages/performance.zip)
+
+### Document Viewer
+
+[<kbd><br>**Download**<br></kbd>](https://github.com/Longridge-High-School/3d-print-console-widgets/blob/main/_packages/document-viewer.zip)
+
+
+### Slicer
+
+[<kbd><br>**Download**<br></kbd>](https://github.com/Longridge-High-School/3d-print-console-widgets/blob/main/_packages/slicer.zip)

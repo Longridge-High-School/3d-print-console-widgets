@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang = "en-gb">
+    <head>
+        <meta charset = "utf-8">
+        <link rel = "stylesheet" href = "/css/style.css">
+        <link rel = "stylesheet" type = "text/css" href = "slicer.css">
+        <link rel = "icon" href = "/img/favicon.svg" sizes = "any" type = "image/svg+xml">
+        <script type = "importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+                    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+                }
+            }
+        </script>
+        <script type = "module" src = "https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+        <title>3D Print Console Slicer</title>
+    </head>
+    <body>
+        <div id = "ProcessingBanner">
+            <div class = "ProcessingMessageContainer">
+                <div class = "loader"></div>
+                <p><i><span id = "ProcessingMessage">Please wait...</span></i></p>
+            </div>
+        </div>
+        <header>
+            <img src = "/img/favicon.svg" class = "Logo"></img>
+            <h1>3D Print Console Slicer</h1>
+        </header>
+        <script type = "module" src = "./scripts/loader.js"></script>
+        <main class = "SlicerMain">
+            <div id = "LeftColumn">
+                <button onclick = "location.href = '/';">❌ Back</button>
+                <hr>
+                <h3>Settings</h3>
+                <label for = "PrinterModel">Printer Model:</label>
+                <select id = "PrinterModel">
+                    <option value = "Ender3">Creality Ender 3</option>
+                    <option value = "Ender3V2">Creality Ender 3 V2</option>
+                    <option value = "Ender3Pro">Creality Ender 3 Pro</option>
+                    <option value = "Ender3S1">Creality Ender 3 S1</option>
+                    <option value = "Ender5">Creality Ender 5</option>
+                    <option value = "Ender6">Creality Ender 6</option>
+                    <option value = "CR10">Creality CR10</option>
+                    <option value = "CR10S5">Creality CR10S5</option>
+                    <option value = "CR6SE">Creality CR6SE</option>
+                    <option value = "CrealityK1">Creality K1</option>
+                    <option value = "CrealityK1Max">Creality K1 Max</option>
+                    <option value = "PrusaI3MK3S">Prusa I3 MK3 S</option>
+                    <option value = "PrusaMini">Prusa Mini</option>
+                    <option value = "PrusaMK4">Prusa MK4</option>
+                    <option value = "PrusaXL">Prusa XL</option>
+                    <option value = "BambuLabX1Carbon">Bambu Lab X1 Carbon</option>
+                    <option value = "BambuLabP1P">Bambu Lab P1P</option>
+                    <option value = "BambuLabA1">Bambu Lab A1</option>
+                    <option value = "BambuLabA1Mini">Bambu Lab A1 Mini</option>
+                    <option value = "AnycubicI3Mega">Anycubic I3 Mega</option>
+                    <option value = "AnycubicKobra">Anycubic Kobra</option>
+                    <option value = "AnycubicVyper">Anycubic Viper</option>
+                    <option value = "AnycubicPhotonMonoX">Anycubic Photon Mono X</option>
+                    <option value = "ElegooNeptune3">Elegeoo Neptune 3</option>
+                    <option value = "ElegooNeptune3Pro">Elegoo Neptune 3 Pro</option>
+                    <option value = "ElegooNeptune4">Elegoo Neptune 4</option>
+                    <option value = "ElegooNeptune4Pro">Elegoo Neptune 4 Pro</option>
+                    <option value = "ArtillerySidewinderX1">Artillery Sidewinder X1</option>
+                    <option value = "ArtillerySidewinderX2">Artillery Sidewinder X2</option>
+                    <option value = "ArtilleryGenius">Artillery Genius</option>
+                    <option value = "SovolSV06">Sovol SV06</option>
+                    <option value = "SovolSV06Plus">Sovol SV06 Plus</option>
+                    <option value = "Voron24">Voron 24</option>
+                    <option value = "UltimakerS5">Ultimaker S5</option>
+                    <option value = "FlashForgeCreatorPro">Flashforge Creator Pro</option>
+                    <option value = "FlashforgeAdventurer3">Flashforge Adventurer 3</option>
+                    <option value = "Raise3DPro2">Raise3D Pro 2</option>
+                    <option value = "MakerbotReplicatorPlus">Makerbot Replicator Plus</option>
+                    <option value = "QidiXPlus">Qidi X Plus</option>
+                    <option value = "MonopriceSelectMiniV2">Monoprice Select Mini V2</option>
+                    <option value = "LulzBotMini2">LulzBot Mini 2</option>
+                    <option value = "LulzBotTAZ6">LulzBot TAZ 6</option>
+                    <option value = "KingroonKP3S">Kingroon KP3S</option>
+                    <option value = "AnkerMakeM5">Anker Make M5</option>
+                </select>
+                <br>
+                <label for = "FilamentType">Filament Type:</label>
+                <select id = "FilamentType">
+                    <option value = "GenericPLA">Generic PLA</option>
+                    <option value = "GenericPETG">Generic PETG</option>
+                    <option value = "GenericABS">Generic ABS</option>
+                    <option value = "GenericTPU">Generic TPU</option>
+                    <option value = "GenericNylon">Generic Nylon</option>
+                    <option value = "GenericASA">Generic ASA</option>
+                    <option value = "HatchboxPLA">Hatchbox PLA</option>
+                    <option value = "eSunPLAPlus">eSun PLA Plus</option>
+                    <option value = "OverturePLA">Overture PLA</option>
+                    <option value = "PrusamentPLA">Prusament PLA</option>
+                    <option value = "PolymakerPolyLitePLA">Polymaker PolyLite PLA</option>
+                    <option value = "PolymakerPolyTerraPLA">Polymaker PolyTerra PLA</option>
+                    <option value = "PolymakerPolyMaxPLA">Polymaker PolyMax PLA</option>
+                    <option value = "SunluPLA">Sunlu PLA</option>
+                    <option value = "ColorFabbPLAPHA">ColorFabb PLAPHA</option>
+                    <option value = "PrusamentPETG">Prusament PETG</option>
+                    <option value = "PrusaPETG">Prusa PETG</option>
+                    <option value = "BambuLabPETGHF">Bambu Lab PETGHF</option>
+                    <option value = "PolymakerPolyLitePETG">Polymaker PolyLite PETG</option>
+                    <option value = "eSunPETG">eSun PETG</option>
+                    <option value = "OverturePETG">Overture PETG</option>
+                    <option value = "HatchboxPETG">Hatchbox PETG</option>
+                    <option value = "SunluPETG">Sunlu PETG</option>
+                    <option value = "ColorFabbNGen">ColorFabb NGen</option>
+                    <option value = "BambuLabABS">BambuLab ABS</option>
+                    <option value = "eSunABSPlus">eSun ABS Plus</option>
+                    <option value = "HatchboxABS">Hatchbox ABS</option>
+                    <option value = "NinjaFlexTPU">NinjaFlex TPU</option>
+                    <option value = "SainSmartTPU">SainSmart TPU</option>
+                    <option value = "PolymakerPolyFlexTPU95">Polymaker PolyFlex TPU95</option>
+                    <option value = "3DXTechCarbonX">3DXTech Carbon X</option>
+                    <option value = "UltimakerPLA">Ultimaker PLA (2.85mm)</option>
+                    <option value = "UltimakerToughPLA">Ultimaker ToughPLA (2.85mm)</option>
+                </select>
+                <br>
+                <label for = "InfillPattern">Infill Pattern:</label>
+                <select id = "InfillPattern">
+                    <option value = "grid">Grid</option>
+                    <option value = "triangles">Triangles</option>
+                    <option value = "hexagons">Hexagons</option>
+                </select>
+                <br>
+                <label for = "InfillDensity">Infill Density:</label>
+                <input type = "number" id = "InfillDensity" min = "1" max = "100" value = "20"><label>&nbsp;%</label>
+                <br>
+                <label for = "UseSupports">Create Supports:</label>
+                <input type = "checkbox" id = "UseSupports" value = "false">
+                <hr>
+                <h3>Slice and Export</h3>
+                <button id = "SliceButton" onclick = "Slice ()">Slice</button><span><b>Current Sliced File: <span id = "CurrentSlicedFile">None</span></b></span>
+                <table id = "PrinterTable">
+                    <tr>
+                        <td>
+                            <div class = "loader"></div>
+                        </td>
+                    </tr>
+                </table>
+                <p>⚠️ Remember to start your print jobs in 3D Print Console!</p>
+                <a disabled id = "DownloadLink"><button>Download GCODE</button></a>
+            </div>
+            <div id = "RightColumn">
+                <h3>Preview</h3>
+                <div class = "ModelViewerContainer">
+                    <model-viewer id = "ModelViewer" src = "" shadow-intensity = "2" camera-controls touch-action = "pan-y"></model-viewer>
+                </div>
+                <br>
+                <hr>
+                <h3>File Picker</h3>
+                <input type = "file" accept = ".stl" id = "Upload"/>
+            </div>
+        </main>
+        <footer>
+            <script type = "text/JavaScript">
+                document.write ("<p>Copyright " + new Date ().getFullYear () + " Longridge High School.");
+            </script>
+            <noscript><p>Copyright 2026 Longridge High School.</noscript>
+                Licensed under the <a href = 'https://raw.githubusercontent.com/Longridge-High-School/3d-print-console/refs/heads/main/LICENSE.txt'>MIT license</a>
+                and powered by <a href = "https://jgphilpott.github.io/polyslice/" target = "_blank">PolySlice</a>.</p>
+        </footer>
+        <script type = "text/JavaScript" src = "./scripts/slicer.js"></script>
+        <script type = "text/JavaScript" src = "./scripts/sender.js"></script>
+    </body>
+</html>
