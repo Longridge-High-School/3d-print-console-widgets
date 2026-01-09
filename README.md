@@ -53,6 +53,35 @@ If you want more than one copy of the same widget, just create another JSON obje
 
 [![Static Badge](https://img.shields.io/badge/Download-8A2BE2?style=plastic&logo=github&logoSize=auto&color=%23586497EE)](https://github.com/Longridge-High-School/3d-print-console-widgets/raw/refs/heads/main/_packages/performance.zip)
 
+This widget lets you track your CPU, RAM and disk usage and display it inside 3D Print Console. You can use this to monitor the 3D Print Console server itself, or some printers that have a built-in Linux SBC.
+
+**This widget requires a collector (see below) to feed it the data!**
+
+#### Sample Config
+
+```json
+{
+    "title": "CPU Usage for Printer Name",
+    "url": "/performance/cpu.html",
+    "args": "title=PrinterName&url=https://URL_OF_YOUR_COLLECTOR",
+    "enabled": "true"
+},
+{
+    "title": "Memory & Disk Usage for Printer Name",
+    "url": "/performance/mem_disk.html",
+    "args": "title=PrinterName&url=https://URL_OF_YOUR_COLLECTOR",
+    "enabled": "true"
+}
+```
+
+#### Collector
+
+The collector records the data that is displayed in 3D Print Console. It is written in Python, so you must have Python 3 and the ```flask```, ```flask_cors``` and ```psutil``` modules to run it.
+
+Download the collector (app.py) from [here](https://raw.githubusercontent.com/Longridge-High-School/3d-print-console-widgets/refs/heads/main/performance/collector/app.py). Save it where you want it to be installed, and then run the command ```python -m flask run``` in that directory. The collector will start running and serve the performance data on request. Making it run at startup and as a service depends on your environment, so please refer to the relavent documentation. This repo also contains a Docker version of the collector in the ```/performance/collector``` directory.
+
+It may be useful to use a proxy (especially if you are using HTTPS) to change the collector URL. Make sure the URL in your ```widgets.json``` matches the **base** URL that the collector is using.
+
 ### Document Viewer
 
 [![Static Badge](https://img.shields.io/badge/Download-8A2BE2?style=plastic&logo=github&logoSize=auto&color=%23586497EE)](https://github.com/Longridge-High-School/3d-print-console-widgets/raw/refs/heads/main/_packages/document-viewer.zip)
