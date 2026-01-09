@@ -15,13 +15,13 @@ TODO
 
 ### Performance Monitor
 
-[<kbd><br>**Download**<br></kbd>](https://github.com/Longridge-High-School/3d-print-console-widgets/blob/main/_packages/performance.zip)
+![Static Badge](https://img.shields.io/badge/Download-8A2BE2?style=plastic&logo=github&logoSize=auto&color=%23586497EE&link=https%3A%2F%2Fgithub.com%2FLongridge-High-School%2F3d-print-console-widgets%2Fraw%2Frefs%2Fheads%2Fmain%2F_packages%2Fperformance.zip)
 
 ### Document Viewer
 
-[<kbd><br>**Download**<br></kbd>](https://github.com/Longridge-High-School/3d-print-console-widgets/blob/main/_packages/document-viewer.zip)
+![Static Badge](https://img.shields.io/badge/Download-8A2BE2?style=plastic&logo=github&logoSize=auto&color=%23586497EE&link=https%3A%2F%2Fgithub.com%2FLongridge-High-School%2F3d-print-console-widgets%2Fraw%2Frefs%2Fheads%2Fmain%2F_packages%2Fdocument-viewer.zip)
 
 
 ### Slicer
 
-[<kbd><br>**Download**<br></kbd>](https://github.com/Longridge-High-School/3d-print-console-widgets/blob/main/_packages/slicer.zip)
+![Static Badge](https://img.shields.io/badge/Download-8A2BE2?style=plastic&logo=github&logoSize=auto&color=%23586497EE&link=https%3A%2F%2Fgithub.com%2FLongridge-High-School%2F3d-print-console-widgets%2Fraw%2Frefs%2Fheads%2Fmain%2F_packages%2Fslicer.zip)
