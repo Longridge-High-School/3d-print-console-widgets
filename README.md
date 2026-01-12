@@ -78,7 +78,7 @@ This widget lets you track your CPU, RAM and disk usage and display it inside 3D
 
 The collector records the data that is displayed in 3D Print Console. It is written in Python, so you must have Python 3 and the ```flask```, ```flask_cors``` and ```psutil``` modules to run it.
 
-Download the collector (app.py) from [here](https://raw.githubusercontent.com/Longridge-High-School/3d-print-console-widgets/refs/heads/main/performance/collector/app.py). Save it where you want it to be installed, and then run the command ```python -m flask run``` in that directory. The collector will start running and serve the performance data on request. Making it run at startup and as a service depends on your environment, so please refer to the relavent documentation. This repo also contains a Docker version of the collector in the ```/performance/collector``` directory.
+Download the collector (app.py) from [here](https://github.com/Longridge-High-School/3d-print-console-widgets/blob/main/performance/collector/app.py). Save it where you want it to be installed, and then run the command ```python -m flask run``` in that directory. The collector will start running and serve the performance data on request. Making it run at startup and as a service depends on your environment, so please refer to the relavent documentation. This repo also contains a Docker version of the collector in the ```/performance/collector``` directory.
 
 It may be useful to use a proxy (especially if you are using HTTPS) to change the collector URL. Make sure the URL in your ```widgets.json``` matches the **base** URL that the collector is using.
 
@@ -132,4 +132,5 @@ Slicer currently has some limitations , some of which are inherited from Polysli
 - Models cannot be rotated or scaled once imported.
 - Only 1 model can be sliced at once.
 - It will refuse to slice some models, so don't go uninstalling your normal slicing software.
+
 - The preview will not render every model correctly, even though they slice fine.
