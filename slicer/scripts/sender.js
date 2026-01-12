@@ -29,7 +29,7 @@ async function GetPrinters ()
                     </svg>
                 </td>`;
 
-        if (status === "Ready to Print" && gcodeURL != null)
+        if (status === "Ready to Print" && gcodeURL != null && printer.locked == false)
         {
             row += `<td style = "text-align: center; vertical-align: center;"><button onclick = "Send (${printer.id});">Send to ${printer.name}</button></td>`;
         }
