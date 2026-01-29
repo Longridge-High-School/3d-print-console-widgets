@@ -60,47 +60,47 @@ async function GetStatus (host, key)
     {
         const response = await fetch (host + "/api/printer?exclude=temperature,sd", options);
         data = await response.json ();
+
+        if (data.state.flags.error == "true")
+        {
+            return data.state.error;
+        }
+        else if (data.state.flags.cancelling)
+        {
+            return "Cancelling...";
+        }
+        else if (data.state.flags.pausing)
+        {
+            return "Pausing...";
+        }
+        else if (data.state.flags.resuming)
+        {
+            return "Resuming...";
+        }
+        else if (data.state.flags.finishing)
+        {
+            return "Finishing Job...";
+        }
+        else if (data.state.flags.printing)
+        {
+            return "Busy Printing";
+        }
+        else if (data.state.flags.paused)
+        {
+            return "Paused";
+        }
+        else if (data.state.flags.ready)
+        {
+            return "Ready to Print";
+        }
+        else
+        {
+            return data.state.text;
+        }
     }
     catch
     {
         return "Network Error".toString ();
-    }
-
-    if (data.state.flags.error == "true")
-    {
-        return data.state.error;
-    }
-    else if (data.state.flags.cancelling)
-    {
-        return "Cancelling...";
-    }
-    else if (data.state.flags.pausing)
-    {
-        return "Pausing...";
-    }
-    else if (data.state.flags.resuming)
-    {
-        return "Resuming...";
-    }
-    else if (data.state.flags.finishing)
-    {
-        return "Finishing Job...";
-    }
-    else if (data.state.flags.printing)
-    {
-        return "Busy Printing";
-    }
-    else if (data.state.flags.paused)
-    {
-        return "Paused";
-    }
-    else if (data.state.flags.ready)
-    {
-        return "Ready to Print";
-    }
-    else
-    {
-        return data.state.text;
     }
 }
 
