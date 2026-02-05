@@ -51,7 +51,7 @@ sliceWorker.onmessage = (e) =>
       URL.revokeObjectURL (gcodeURL);
 	}
 
-    var gcode = e.data.replaceAll ("M190 R60", "M190 S60"); // Fix broken GCODE.
+    var gcode = e.data.replaceAll ("M109 R", "M109 S"); // Fix broken GCODE.
 
     var gcodeBlob = new Blob ([new TextEncoder ().encode (gcode)], {type : "text/plain;charset=utf-8"});
     gcodeURL = URL.createObjectURL (gcodeBlob);
