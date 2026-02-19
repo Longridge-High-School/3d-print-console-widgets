@@ -1,0 +1,59 @@
+a
+{
+    font-size: 1em;
+}
+
+.BrowseButton
+{
+    padding: 10px;
+}
+
+.FileListItem
+{
+    padding: 0.5em;
+    padding-top: 0em;
+    margin: 0.5em;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+img
+{
+    border-radius: 9px;
+    max-width: 640px;
+}
+
+.FlexRow
+{
+    display: flex;
+}
+
+.LeftColumn
+{
+    flex: 1;
+}
+
+.RightColumn
+{
+    flex: 1;
+    text-align: right;
+}
+
+#PrinterTable
+{
+    min-width: 66%;
+    font-size: 0.66em;
+}
+
+@media (min-width: 1400px)
+{
+    main
+    {
+        max-width: 1400px;
+        margin: auto;
+        background-color: white;
+        padding: 1em;
+        min-height: calc(100vh - 2em - 20px);
+        border-radius: 10px;
+    }
+}

@@ -6,6 +6,7 @@ This repository contains the following widgets:
 - [Performance Monitor](#performance-monitor)
 - [Document Viewer](#document-viewer)
 - [Slicer](#slicer)
+- [GCODE Library](#gcode-library)
 
 ## How to Install Widgets
 
@@ -134,3 +135,45 @@ Slicer currently has some limitations , some of which are inherited from Polysli
 - It will refuse to slice some models, so don't go uninstalling your normal slicing software.
 
 - The preview will not render every model correctly, even though they slice fine.
+
+### GCODE Library
+
+[![Static Badge](https://img.shields.io/badge/Download-8A2BE2?style=plastic&logo=github&logoSize=auto&color=%23586497EE)](https://github.com/Longridge-High-School/3d-print-console-widgets/raw/refs/heads/main/_packages/gcode-library.zip)
+
+Use this widget to add a library for your commonly-used GCODE files so you don't have to go through the process of finding them or reslicing them every time.
+
+#### Sample Config
+
+```json
+{
+    "title": "GCODE Library",
+    "url": "/gcode-library/widget.html",
+    "args": "",
+    "enabled": "true"
+}
+```
+
+**This config will not need any editing!**
+
+To add files to the GCODE Library, you need to copy the GCODE files to the ```/data/gcode-library/gcode``` directory on your server. Then, go back to the ```/data/gcode-library``` directory and edit ```library.json```. Add a JSON object like the one below, containing the details of your GCODE file.
+
+```json
+{
+    "name": "3D Print Console Logo",
+    "for": "Elegoo Neptune 4",
+    "by": "Mr Paterson",
+    "file": "EN4_3D_Print_Console.gcode",
+    "image": "3D_Print_Console_Logo.jpg",
+    "description": "A sample file used for testing. Also, it's the 3D Print Console logo."
+}
+```
+The ```name``` field is the "friendly" name that users see. It **must** be unique. The ```for``` field is the model of printer that the model has been sliced for. Use the optional ```by``` field to store the author's name. The ```file``` field is your file's name as in the ```/data/gcode-library/gcode``` directory. The optional ```image``` field lets you add an image of what your model looks like. Images are stored in in the ```/data/gcode-library/img``` directory. Finally, the optional ```description``` field lets you write a longer piece of text about your model.
+
+A minimal ```library.json``` file would look like this:
+```json
+{
+    "name": "Name",
+    "for": "Printer Model",
+    "file": "3dmodel.gcode",
+}
+```
