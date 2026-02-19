@@ -30,6 +30,10 @@ async function Load ()
             {
                 file.image = "/img/no_widget.png";
             }
+            else
+            {
+                file.image = "img/" + file.image;
+            }
 
             if (file.description == null)
             {
@@ -46,7 +50,7 @@ async function Load ()
                         <p>${file.description}</p>
                     </div>
                     <div class = "RightColumn">
-                        <img src = "img/${file.image}" alt = "An image of ${file.name}." />
+                        <img src = "${file.image}" alt = "An image of ${file.name}." />
                     </div>
                 </div>
             `;
